@@ -40,7 +40,7 @@ public class Injector {
                 } catch (IllegalAccessException e) {
                     throw new RuntimeException(
                             "Can't set field: " + field.getName()
-                                    + " for object: " + clazzImplementationInstance);
+                                    + " for object: " + clazzImplementationInstance, e);
                 }
             }
         }
@@ -64,7 +64,7 @@ public class Injector {
         } catch (InstantiationException | IllegalAccessException
                  | NoSuchMethodException | InvocationTargetException e) {
             throw new RuntimeException(
-                    "Can't create an instance of: " + implementationClazz.getName());
+                    "Can't create an instance of: " + implementationClazz.getName(), e);
         }
     }
 
